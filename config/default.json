@@ -1,0 +1,8 @@
+{
+  "config1": {
+    "enabled": true
+  },
+  "config2": {
+    "enabled": false
+  }
+}
