@@ -4,6 +4,6 @@ const userController = require("./controller");
 
 router.get("/", userController.getUsers);
 
-router.get("/config", userController.getUsers);
+router.get("/config", userController.changeConfig);
 
 module.exports = router;
