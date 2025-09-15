@@ -1,6 +1,7 @@
 {
   "config1": {
-    "enabled": true
+    "enabled": true,
+    "hai": "kdjashdkj"
   },
   "config2": {
     "enabled": false
