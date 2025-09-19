@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const totpController = require("./controller");
 
-router.get("/generate/secret", totpController.generateOtp);
+router.get("/generate/secret", totpController.generateSecret);
 
-router.get("/generate", totpController.generateOtp);
+router.post("/generate", totpController.getTOTP);
 
 module.exports = router;
