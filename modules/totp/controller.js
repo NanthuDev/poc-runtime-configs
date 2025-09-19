@@ -10,5 +10,17 @@ exports.generateSecret = (req, res) => {
 };
 
 exports.getTOTP = (req, res) => {
-  res.json({ secret: "secret.base32" });
+  console.log(req.body);
+  const { secret } = req.body;
+  try {
+    const token = speakeasy.totp({
+      secret: secret,
+      encoding: "base32",
+      time: Date.now() / 1000, // Current time in seconds
+    });
+
+    res.json({ code: token });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to generate TOTP code" });
+  }
 };
