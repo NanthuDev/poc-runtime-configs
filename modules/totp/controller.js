@@ -1,11 +1,14 @@
 const speakeasy = require("speakeasy");
 
 exports.generateSecret = (req, res) => {
-  //   const configs = configProvider.get("config1");
-  const secret = speak.generateSecret({
+  const secret = speakeasy.generateSecret({
     length: 20,
     name: "TOTP Demo App",
     issuer: "TOTP Demo",
   });
-  res.json("get");
+  res.json({ secret: secret.base32 });
+};
+
+exports.getTOTP = (req, res) => {
+  res.json({ secret: "secret.base32" });
 };
