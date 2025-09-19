@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const userRoutes = require("./modules/user/router");
+const otpRoutes = require("./modules/totp/router");
 
 app.use(express.json());
 
@@ -11,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/otp", otpRoutes);
 
 // Start server
 app.listen(PORT, () => {
